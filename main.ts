@@ -64,7 +64,7 @@ input.onButtonPressed(Button.AB, function () {
                 }
             } else {
                 led.plotBrightness(カウンターx, カウンターy, 10)
-                if (check(カウンターx, カウンターy, 2) == 1 && 1 == 1) {
+                if (check(カウンターx, カウンターy, 2) == 1) {
                     basic.pause(1000)
                     basic.showString("Player2 win")
                     basic.clearScreen()
