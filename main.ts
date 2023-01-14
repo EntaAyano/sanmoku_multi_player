@@ -28,7 +28,7 @@ function check (x: number, y: number, player: number) {
     if (led.pointBrightness(x + 1, y + 1) == 明るさ && led.pointBrightness(x - 1, y - 1) == 明るさ) {
         return 1
     }
-    if (led.pointBrightness(x - 1, y - 1) == 明るさ && led.pointBrightness(x + 2, y + 2) == 明るさ) {
+    if (led.pointBrightness(x - 1, y - 1) == 明るさ && led.pointBrightness(x - 2, y - 2) == 明るさ) {
         return 1
     }
     if (led.pointBrightness(x - 2, y + 2) == 明るさ && led.pointBrightness(x - 1, y + 1) == 明るさ) {
@@ -60,7 +60,7 @@ input.onButtonPressed(Button.AB, function () {
                     basic.pause(1000)
                     basic.showString("Player1 win")
                     basic.clearScreen()
-                    カウンター = 1
+                    カウンター = 0
                 }
             } else {
                 led.plotBrightness(カウンターx, カウンターy, 10)
@@ -68,7 +68,7 @@ input.onButtonPressed(Button.AB, function () {
                     basic.pause(1000)
                     basic.showString("Player2 win")
                     basic.clearScreen()
-                    カウンター = 1
+                    カウンター = 0
                 }
             }
             カウンター += 1

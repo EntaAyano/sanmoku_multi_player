@@ -16,17 +16,17 @@ def check(x: number, y: number, player: number):
         return 1
     if led.point_brightness(x, y + 1) == 明るさ and led.point_brightness(x, y + 2) == 明るさ:
         return 1
-    if led.point_brightness(x+2, y+2) == 明るさ and led.point_brightness(x+1, y+1) == 明るさ:
+    if led.point_brightness(x + 2, y + 2) == 明るさ and led.point_brightness(x + 1, y + 1) == 明るさ:
         return 1
-    if led.point_brightness(x+1, y+1) == 明るさ and led.point_brightness(x-1, y-1) == 明るさ:
+    if led.point_brightness(x + 1, y + 1) == 明るさ and led.point_brightness(x - 1, y - 1) == 明るさ:
         return 1
-    if led.point_brightness(x-1, y-1) == 明るさ and led.point_brightness(x+2, y+2) == 明るさ:
+    if led.point_brightness(x - 1, y - 1) == 明るさ and led.point_brightness(x - 2, y - 2) == 明るさ:
         return 1
-    if led.point_brightness(x-2, y+2) == 明るさ and led.point_brightness(x-1, y+1) == 明るさ:
+    if led.point_brightness(x - 2, y + 2) == 明るさ and led.point_brightness(x - 1, y + 1) == 明るさ:
         return 1
-    if led.point_brightness(x-1, y+1) == 明るさ and led.point_brightness(x+1, y-1) == 明るさ:
+    if led.point_brightness(x - 1, y + 1) == 明るさ and led.point_brightness(x + 1, y - 1) == 明るさ:
         return 1
-    if led.point_brightness(x+1, y-1) == 明るさ and led.point_brightness(x+2, y-2) == 明るさ:
+    if led.point_brightness(x + 1, y - 1) == 明るさ and led.point_brightness(x + 2, y - 2) == 明るさ:
         return 1
     return 0
 
@@ -37,13 +37,11 @@ input.on_button_pressed(Button.A, on_button_pressed_a)
 
 def on_button_pressed_ab():
     global カウンターx, カウンターy, カウンター
-    if カウンターx >= 6:
-        カウンターx = 5
-    if カウンターy >= 6:
-        カウンターy = 5
-    カウンターx += -1
-    カウンターy += -1
-    if カウンターx >= 0 and カウンターx <= 4:
+    if カウンターx >= 4:
+        カウンターx = 3
+    if カウンターy >= 4:
+        カウンターy = 3
+    if カウンターx >= 1 and カウンターx <= 3:
         if not (led.point(カウンターx, カウンターy)):
             if カウンター % 2 == 1:
                 led.plot_brightness(カウンターx, カウンターy, 255)
